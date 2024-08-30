@@ -14,7 +14,7 @@ import { redirect } from "next/navigation"
 const Home = async () => {
   const clerkUser = await currentUser()
   if (!clerkUser) {
-    redirect("/")
+    redirect("/sign-in")
   } 
 
   const roomDocuments = await  getDocuments(clerkUser.emailAddresses[0].emailAddress)
